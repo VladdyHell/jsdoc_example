@@ -1,0 +1,34 @@
+{
+  "name": "jsdoc_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "doc": "clear; jsdoc -c jsdoc.json; bash moveDir.sh",
+    "resetDoc": "bash cleanUp.sh; jsdoc -c jsdoc.json; bash moveDir.sh",
+    "docBabelExp": "bash moveDir; babel-node jsdoc -c jsdoc.json",
+    "liveDoc": "nodemon live-server",
+    "checkjs": "tsc"
+  },
+  "typings": "types",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.1",
+    "@babel/node": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^39.3.6",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jsdoc": "^3.6.11",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
