@@ -1,12 +1,10 @@
 const Types = require('./types');
 const {add, substract, multiply, divide} = require('./calculator');
-const cleanse = require('../cleanse');
 
 /**
  * @file index.js is the root file for this example app
  * @author Vladd Cantor
  * @see {@link https://example.com|Example Official Site}
- * ![img](images/types/20220923185721.png)
  */
 
 /**

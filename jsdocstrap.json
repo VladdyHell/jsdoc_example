@@ -1,0 +1,36 @@
+{
+	"source": {
+		"include": ["src", "package.json", "readme.md"],
+		"includePattern": ".js$",
+		"excludePattern": "(node_modules/|docs)"
+	},
+	"plugins": ["plugins/markdown"],
+	"templates": {
+		"cleverLinks": true,
+		"monospaceLinks": true
+	},
+	"opts": {
+		"recurse": true,
+		"destination": "./docs",
+		"template": "./node_modules/ink-docstrap/template",
+		"tutorials": "/home/crimsonvirtuoso/Notes/YouTube/Documenting Your JavaScript JSDoc Crash Course/",
+		"readme": "./README.md"
+	},
+	"templates": {
+		"systemName": "JSDoc Example",
+		"footer": "JSDoc Example Reserved",
+		"copyright": "Copyright &copy; 2022 Vladd Cantor. All Rights Reserved",
+		"includeDate": true,
+		"navType": "vertical",
+		"theme": "united",
+		"linenums": true,
+		"collapseSymbols": true,
+		"inverseNav": true,
+		"outputSourceFiles": true,
+		"outputSourcePath": true,
+		"dateFormat": "moment().format(\"dddd, MMMM Do YYYY, h:mm:ss a\");",
+		"syntaxTheme": "dark",
+		"sort": true,
+		"search": true
+	}
+}
