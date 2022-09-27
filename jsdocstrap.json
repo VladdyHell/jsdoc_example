@@ -13,7 +13,7 @@
 		"recurse": true,
 		"destination": "./docs",
 		"template": "./node_modules/ink-docstrap/template",
-		"tutorials": "/tutorials/",
+		"tutorials": "./tutorials/",
 		"readme": "./README.md"
 	},
 	"templates": {

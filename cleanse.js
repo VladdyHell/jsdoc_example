@@ -13,9 +13,11 @@ const isDir = false;
  *
  * @type       {Function}
  */
-const tutorialsPathDir = isDir ? require(`${
-	require('./jsdoc.json').opts.tutorials
-}API Reference/index.html`).toString() : '';
+const tutorialsPathDir = isDir
+	? require(`${
+			require('./jsdoc.json').opts.tutorials
+	  }API Reference/index.html`).toString()
+	: '';
 
 const isApi = process.argv[2] == 'api';
 const isNotes = process.argv[2] == 'notes';
@@ -46,23 +48,33 @@ const file2EscapeDynamic = path.join(
 	process.argv[2] || '',
 	'API Reference.html'
 );
-const file = fs.readFileSync(tutorialsPathRelative).toString();
-const removeStyleOpeningTag = file.replace(/(\?i)<style[^>]*>/, '');
-const removeStyleClosingTag = removeStyleOpeningTag.replace(
-	/(\?i)<\/style[^>]*>/,
-	''
-);
-const removeStyleTag$Content = file.replace(/<style[^$]+>[^$]+<\/style>/, '');
-const unescapedCode = removeStyleTag$Content.replace(
-	/`([^`]+)`/g,
-	'<code>$1</code>'
-);
-const unescapedLink = unescapedCode.replace(
-	/\[(.+)\]\((.+)\)/,
-	'<a href="$2">$1</a>'
-);
+let file;
+let removeStyleOpeningTag;
+let removeStyleClosingTag;
+let removeStyleTag$Content;
+let unescapedCode;
+let unescapedLink;
+let final;
+fs.readFile(tutorialsPathRelative, (err, tutFile) => {
+	if (err || !tutFile) process.exit(0);
+	file = tutFile.toString();
+	removeStyleOpeningTag = file.replace(/(\?i)<style[^>]*>/, '');
+	removeStyleClosingTag = removeStyleOpeningTag.replace(
+		/(\?i)<\/style[^>]*>/,
+		''
+	);
+	removeStyleTag$Content = file.replace(/<style[^$]+>[^$]+<\/style>/, '');
+	unescapedCode = removeStyleTag$Content.replace(
+		/`([^`]+)`/g,
+		'<code>$1</code>'
+	);
+	unescapedLink = unescapedCode.replace(
+		/\[(.+)\]\((.+)\)/,
+		'<a href="$2">$1</a>'
+	);
 
-const final = unescapedLink;
+	final = unescapedLink;
+});
 
 (async () => {
 	try {
@@ -75,7 +87,8 @@ const final = unescapedLink;
 		console.timeEnd('overwrite-unescaped-markdown');
 		console.info('Done Escaping Markdown!');
 	} catch (e) {
-		throw e;
+		// throw e;
+		process.exit(0);
 	}
 })();
 
