@@ -27,7 +27,7 @@ const tutorialsPath = `${require('./jsdoc.json').opts.tutorials}${
 		? 'Full Notes.html'
 		: 'API Reference.html'
 }`;
-const tutorialsPathRelative = `./tutorials${
+const tutorialsPathRelative = `./tutorials/${
 	isApi
 		? 'API Reference.html'
 		: isNotes
