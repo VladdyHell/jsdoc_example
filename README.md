@@ -1,4 +1,4 @@
-# Project Title
+# JSDoc Example
 
 <!-- PROJECT SHIELDS -->
 <!--
