@@ -13,7 +13,7 @@
 		"recurse": true,
 		"destination": "./docs",
 		"template": "./templates/docdash",
-		"tutorials": "/home/crimsonvirtuoso/Notes/YouTube/Documenting Your JavaScript JSDoc Crash Course/",
+		"tutorials": "/tutorials/",
 		"readme": "./README.md"
 	}
 }

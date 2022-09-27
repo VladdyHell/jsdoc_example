@@ -13,7 +13,7 @@
 		"recurse": true,
 		"destination": "./docs",
 		"template": "./node_modules/clean-jsdoc-theme",
-		"tutorials": "/home/crimsonvirtuoso/Notes/YouTube/Documenting Your JavaScript JSDoc Crash Course/",
+		"tutorials": "/tutorials/",
 		"readme": "./README.md",
 		"encoding": "utf8",
 		"theme_opts": {

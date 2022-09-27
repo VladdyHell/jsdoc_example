@@ -27,6 +27,13 @@ const tutorialsPath = `${require('./jsdoc.json').opts.tutorials}${
 		? 'Full Notes.html'
 		: 'API Reference.html'
 }`;
+const tutorialsPathRelative = `./tutorials${
+	isApi
+		? 'API Reference.html'
+		: isNotes
+		? 'Full Notes.html'
+		: 'API Reference.html'
+}`;
 
 const fsWriteFileSync = util.promisify(fs.writeFile);
 const user = os.userInfo().username;
@@ -39,7 +46,7 @@ const file2EscapeDynamic = path.join(
 	process.argv[2] || '',
 	'API Reference.html'
 );
-const file = fs.readFileSync(tutorialsPath).toString();
+const file = fs.readFileSync(tutorialsPathRelative).toString();
 const removeStyleOpeningTag = file.replace(/(\?i)<style[^>]*>/, '');
 const removeStyleClosingTag = removeStyleOpeningTag.replace(
 	/(\?i)<\/style[^>]*>/,
@@ -62,7 +69,7 @@ const final = unescapedLink;
 		console.info(`Escaping Markdown...`);
 		console.time('overwrite-unescaped-markdown');
 		await fsWriteFileSync(
-			tutorialsPath,
+			tutorialsPathRelative,
 			isApi ? final.trim() : isNotes ? removeStyleTag$Content.trim() : ''
 		);
 		console.timeEnd('overwrite-unescaped-markdown');

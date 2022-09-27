@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.1.5.2 (Linux)"/>
+	<meta name="created" content="2022-09-19T13:48:10.252751705"/>
+	<meta name="changed" content="2022-09-27T13:34:37.516795136"/>
+	
+	
+	
+</head>
+
+<body>
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">Config API</A><br>
+		<A HREF="#table1">Tags</A><br>
+		<A HREF="#table2">Data Types</A><br>
+		<A HREF="#table3">Symbols</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>Config API</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="85"></colgroup>
+	<colgroup width="109"></colgroup>
+	<colgroup width="255"></colgroup>
+	<tr>
+		<td height="31" align="center"><b>Property</b></td>
+		<td align="center"><b>Value or/and Data Type</b></td>
+		<td align="center"><b>Definition/Description</b></td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><code>source</code></td>
+		<td align="left"><code>Object | String???</code></td>
+		<td align="left">Where JSDoc is gonna look</td>
+	</tr>
+	<tr>
+		<td height="46" align="left"><code>source.include</code></td>
+		<td align="left"><code>path: String[]</code></td>
+		<td align="left">* We’re going to have a folder called source <br>* Array of different folders </td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><code>source.includePattern</code></td>
+		<td align="left"><code>fileFormat: RegExp</code></td>
+		<td align="left">Include anything that ends with the specified regex pattern for file format</td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><code>source.excludePattern</code></td>
+		<td align="left"><code>path: RegExp()</code></td>
+		<td align="left">Exclude any specified regex pattern for folder</td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><code>plugins</code></td>
+		<td align="left"><code>String[]</code></td>
+		<td align="left">This part will allow allow you to use markdown</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>templates</code></td>
+		<td align="left"><code>Object</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><code>templates.cleverLinks</code></td>
+		<td align="left"><code>Boolean</code></td>
+		<td rowspan=2 align="left">This is just going to make it so that when you have links within your documentation it’ll have a mono space font</td>
+	</tr>
+	<tr>
+		<td height="46" align="left"><code>templates.monospaceLinks</code></td>
+		<td align="left"><code>Boolean</code></td>
+		</tr>
+	<tr>
+		<td height="17" align="left"><code>opts</code></td>
+		<td align="left"><code>Object</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="46" align="left"><code>opts.recurse</code></td>
+		<td align="left"><code>Boolean</code></td>
+		<td align="left">Allows us to basically recurse into subfolders okay so it’ll look below just the root level</td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>destination</code></td>
+		<td align="left"><code>path: String</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>template</code></td>
+		<td align="left"><code>path: String</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>tutorials</code></td>
+		<td align="left"><code>path: String</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>readme</code></td>
+		<td align="left"><code>file: String</code></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>Tags</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="200"></colgroup>
+	<colgroup width="325"></colgroup>
+	<colgroup width="270"></colgroup>
+	<colgroup width="302"></colgroup>
+	<colgroup width="85"></colgroup>
+	<tr>
+		<td height="17" align="center"><b>Tags</b></td>
+		<td align="left"><b>Syntax</b></td>
+		<td align="center"><b>Definition/Description</b></td>
+		<td align="left"><b>Examples</b></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>@type</code></td>
+		<td align="left"><code>@type {&lt;type&gt;}</code></td>
+		<td align="left">Data Type</td>
+		<td align="left"><code>@type {string}</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><code>@param</code></td>
+		<td align="left"><code>@param {&lt;dataType&gt;} &lt;paramName&gt; - &lt;desc&gt;</code></td>
+		<td align="left">Function Parameter(Note: You can use regular functions or arrow functions)</td>
+		<td align="left"><code>@param {number} amount – Total amount</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><code>@returns</code></td>
+		<td align="left"><code>@returns{&lt;dataType&gt;} – &lt;desc&gt;</code></td>
+		<td align="left">What function returns(You can do <code>void</code> type)</td>
+		<td align="left"><code>@returns{string} – Total with a dollar sign</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>@typedef</code></td>
+		<td align="left"><code>@typedef {&lt;dataType&gt;} &lt;typeName&gt;</code></td>
+		<td align="left">Custom types</td>
+		<td align="left"><code>@typedef {Object} Student</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><code>@property</code></td>
+		<td align="left"><code>@property{&lt;dataType&gt;} &lt;typeName&gt; - &lt;desc&gt;</code></td>
+		<td align="left">To have certain properties above the defined custom type</td>
+		<td align="left"><code>@property {number} id - Student ID</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="61" align="left"><code>@link</code></td>
+		<td align="left"><code>&lt;desc?&gt; {@link &lt;Class&gt;} &lt;desc?&gt;</code></td>
+		<td align="left">* Links the variable into the related (class?)<br>* Link to other parts of the documentation from certain parts<br>* Can have multi line comment</td>
+		<td align="left"><code>/**<br> * Person One?<br> * See {@link Person}<br> */</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="76" align="left"><code>@module</code></td>
+		<td align="left"><code>@module &lt;moduleName&gt;</code></td>
+		<td align="left">When we create another file, basically that we’re going to bring in, it’s a module, we can just define it with this</td>
+		<td align="left" valign=top><code>/**<br> * Calculator module - See {@tutorial calculator-tutorial}<br> * @module calculator<br> */</code> (Below <code>@tutorial</code>)</td>
+		<td align="left"> </td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><code>@file</code></td>
+		<td align="left"><code>@file &lt;file.&lt;format&gt;&gt; &lt;desc&gt;</code></td>
+		<td align="left"><br></td>
+		<td align="left"><code>@file index.js is the root file for this example app</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>@author</code></td>
+		<td align="left"><code>@author &lt;name&gt;</code></td>
+		<td align="left"><br></td>
+		<td align="left"><code>@author Brad Traversy</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="46" align="left"><code>@see</code></td>
+		<td align="left">* <code>@see &lt;a href=&quot;{{link}}&quot;&gt;{{linkName}}&lt;/a&gt;</code><br>* <code>@see {@link &lt;link&gt;|&lt;linkName&gt;}</code></td>
+		<td align="left">Point to an external website</td>
+		<td align="left"><code>@see &lt;a href=&quot;https://traversymedia.com&quot;&gt;Traversy Media&lt;/a&gt;</code></td>
+		<td align="left"> </td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><code>@tutorial</code></td>
+		<td align="left"><code>{ desc } - See {@tutorial &lt;tutorialName&gt;}</code></td>
+		<td align="left">Points to a specific tutorial</td>
+		<td align="left"><code>Calculator module - See {@tutorial calculator-tutorial}</code> (Above <code>@module</code>)</td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="61" align="left">#<code>@implements</code></td>
+		<td align="left"><code>@implements {&lt;Interface&gt;|&lt;typeDef&gt;}</code></td>
+		<td align="left">Links the class to the specified interface</td>
+		<td align="left"><code>/**<br> * This class describes a person and greets.<br> * @implements {PersonTypes}<br> */</code></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>Data Types</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="246"></colgroup>
+	<colgroup width="272"></colgroup>
+	<tr>
+		<td height="17" align="left"><b>Syntax</b></td>
+		<td align="left"><b>Examples</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>string</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>number</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>boolean</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>Object</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>Array</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>Function</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>void</code></td>
+		<td align="left"><br></td>
+	</tr>
+	<tr>
+		<td height="31" align="left"><code>Array&lt;{ type }&gt;|Array.&lt;{ type }&gt;|&lt;type&gt;[]</code></td>
+		<td align="left"><code>Array&lt;number&gt;</code></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>{&lt;key&gt;: &lt;dataType&gt;, ...}</code></td>
+		<td align="left"><code>{id: number|string, text: string}</code></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>Symbols</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="182"></colgroup>
+	<colgroup width="420"></colgroup>
+	<colgroup width="407"></colgroup>
+	<tr>
+		<td height="17" align="left"><b>Symbol/Syntax</b></td>
+		<td align="center"><b>Definition/Description</b></td>
+		<td align="left"><b>Example</b></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>|</code> (Pipe)</td>
+		<td align="left">'Or’ operator</td>
+		<td align="left"><code>@type {{id: number|string, text: string}}</code></td>
+	</tr>
+	<tr>
+		<td height="17" align="left"><code>[&lt;key&gt;]</code></td>
+		<td align="left">Makes the specific object field optional</td>
+		<td align="left"><code>@property {string|number} [age] - Student age (optional)</code></td>
+	</tr>
+	<tr>
+		<td height="31" align="left">#<code>[&lt;key&gt; = &lt;value&gt;]</code></td>
+		<td align="left">Makes the specific object field optional(With default)<a href="https://bit.ly/3C5ilVS">See Reference</a></td>
+		<td align="left"><br></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>
