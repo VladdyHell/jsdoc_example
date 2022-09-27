@@ -78,5 +78,5 @@ This project is licensed under the Vladd Cantor License - see the LICENSE.md fil
 
 ## Acknowledgments
 
-* [Brad's Project Sample](https://github.com/lyhd/jsdoc-crash-course))
+* [Brad's Project Sample](https://github.com/lyhd/jsdoc-crash-course)
 * [Brad's Crash Course](https://youtube.com/watch?v=YK-GurROGIg)
