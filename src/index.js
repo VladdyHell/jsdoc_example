@@ -6,7 +6,7 @@ const cleanse = require('../cleanse');
  * @file index.js is the root file for this example app
  * @author Vladd Cantor
  * @see {@link https://example.com|Example Official Site}
- * ![img](images/types/20220923185721.png)
+ * ![img](images/index/20220928202854.png)
  */
 
 /**

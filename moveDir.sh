@@ -7,4 +7,5 @@
 # mv !(docs) ./**/images/ ./docs/images 2>/dev/null
 # mv "$(ls --ignore=docs)/**/images/" ./docs/images 2>/dev/null
 
-mv ./src/images/ ./types/images ./docs/jsdoc_example/1.0.0/ 2>/dev/null
+mv ./src/images/ ./src/**/images/ ./types/images/ ./types/**/images/ ./docs/ 2>/dev/null
+# mv ./src/images/ ./types/images ./docs/jsdoc_example/1.0.0/ 2>/dev/null

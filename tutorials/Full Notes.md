@@ -580,6 +580,14 @@ module.exports = (f) => f;
 
 ```
 
+```bash
+#!/usr/bin/bash
+
+while inotifywait -r -e modify,create,delete,move /home/$USER/Notes/<SpecificNoteDir>/; do
+  rsync -avz /home/$USER/Notes/<SpecificNoteDir>/ /home/$USER/<projDir>/
+done
+```
+
 <a id="jsdoc-configs"></a>
 ## JSDoc Configs
 
